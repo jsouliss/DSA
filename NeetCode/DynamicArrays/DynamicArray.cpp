@@ -8,7 +8,7 @@
 
 DynamicArray::DynamicArray(int capacity) {
     if(capacity > 0) {
-        capacity = capacity;
+        this->capacity = capacity;
         size = 0;
         arr = new int[capacity];
     }
@@ -53,6 +53,7 @@ void DynamicArray::pushback(int n) {
 int DynamicArray::popback() {
     int value = arr[size - 1];
     arr[size - 1] = 0;
+    size--;
     return value;
 }
 
@@ -75,9 +76,13 @@ int DynamicArray::getCapacity() {
 }
 
 void DynamicArray::print() {
-    while(size > 0) {
-        std::cout << arr[size - 1] << ", ";
-        size--;
+    int count = 0;
+    while(count < size) {
+        std::cout << arr[count++];
+
+        if (count != size) {
+            std::cout << ", ";
+        }
     }
 }
 
