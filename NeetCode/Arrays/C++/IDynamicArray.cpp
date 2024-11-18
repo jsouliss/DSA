@@ -11,5 +11,5 @@ public:
     virtual int getSize() = 0;
     virtual int getCapacity() = 0;
     virtual void print() = 0;
-    virtual virtual ~IDynamicArray() = default;
+    virtual ~IDynamicArray() = default;
 };

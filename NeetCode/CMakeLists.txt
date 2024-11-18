@@ -7,10 +7,9 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(NeetCode1 Arrays/LeetCode/rem_dup.cpp)
 
 # Main
-add_executable(NeetCode2 Arrays/C++/dynArray.cpp)
+add_executable(NeetCode2 Arrays/C++/IDynamicArray.cpp Arrays/C++/dynArray.cpp)
 
-# Header implemenation
-add_executable(NeetCode3 Arrays/C++/DynamicArray.cpp
-        Arrays/C++/IDynamicArray.cpp)
 add_executable(NeetCode4 Arrays/LeetCode/concatArray.cpp)
-add_executable(NeetCode5  Stack/C++/IStack.cpp Stack/C++/Stack.cpp Stack/C++/Stack.h)
+
+add_executable(NeetCode5 Stack/C++/IStack.cpp Stack/C++/Stack.h
+        Stack/C++/stackMain.cpp)
