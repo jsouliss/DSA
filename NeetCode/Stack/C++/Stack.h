@@ -1,81 +1,61 @@
 //
-// Created by Jerry Solis on 11/16/24.
+// Created by Jerry on 4/30/2025.
 //
-#ifndef NEETCODE_STACK_H
-#define NEETCODE_STACK_H
 
+#ifndef STACK_H
+#define STACK_H
 #include "IStack.cpp"
-#include <iostream>
+#include <vector>
 
-class Stack : public IStack {
-private:
-    int capacity;
-    int size;
-    int* arr;
+class Stack final : public IStack {
 public:
-    Stack(int capacity);
-    void push(int n) override;
-    int pop() override;
-    int peek() override;
-    void resize() override;
-    void print() override;
-    ~Stack() override;
+     explicit Stack(int);
+     void push (int value) override;
+     int pop () override;
+     int peek () override;
+     int stackSize() override;
+     ~Stack() override;
+private:
+     std::vector<int>stack;
+     int top = -1;
+     int capacity;
+     int size = 0;
 };
 
-Stack::Stack(int capacity) : size(0) {
-    if (capacity >  0) {
-        this->capacity = capacity;
-        arr = new int[capacity];
-    }
+inline Stack::Stack(const int capacity) {
+     this->capacity = capacity;
 }
 
-void Stack::push(int n) {
-    if(size == capacity) {
-        resize();
-    }
-    arr[size] = n;
-    size++;
+inline void Stack::push(const int value) {
+     if (size < capacity) {
+          stack.push_back(value);
+          size++;
+     }
 }
 
-int Stack::peek() {
-    if (size > 0) {
-        return arr[size - 1];
-    }
-    return 0;
+inline int Stack::stackSize() {
+     return size;
 }
 
-int Stack::pop() {
-    size--;
-    int val = arr[size];
-    arr[size] = 0;
-
-    return val;
+inline int Stack::pop() {
+     if (size > 0) {
+          const int value = stack[size - 1];
+          stack.pop_back();
+          size--;
+          return value;
+     }
+     return -1;
 }
 
-void Stack::resize() {
-    if (size == capacity) {
-        capacity *= 2;
-        int *temp = new int[capacity];
-        for (int i = 0; i < size; ++i) {
-            temp[i] = arr[i];
-        }
-        delete[] arr;
-        arr = temp;
-    }
+inline int Stack::peek() {
+     if (size > 0) {
+          return stack.back();
+     }
+     return -1;
 }
 
-void Stack::print() {
-    for (int i = 0; i < size; ++i) {
-        if (i == size - 1) {
-            std::cout << arr[i] << "";
-            break;
-        }
-        std::cout << arr[i] << ", ";
-    }
+inline Stack::~Stack() {
+
 }
 
-Stack::~Stack() {
-    delete[] arr;
-}
-
-#endif //NEETCODE_STACK_H
+#endif //STACK_H

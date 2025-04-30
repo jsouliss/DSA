@@ -1,34 +1,29 @@
 //
-// Created by Jerry Solis on 11/16/24.
+// Created by Jerry on 4/30/2025.
 //
-
 #include <iostream>
 #include "Stack.h"
 
 using namespace std;
 
+
 int main() {
-    Stack *stack = new Stack(10);
+    constexpr int size = 5;
+    class Stack stack(size);
 
-    stack->push(1);
-    stack->push(2);
-    stack->push(3);
-    stack->push(4);
-    stack->push(5);
-    stack->push(6);
-    stack->push(7);
-    stack->push(8);
-    stack->push(9);
-    stack->push(10);
-    stack->push(11);
-    stack->push(12);
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    stack.push(4);
+    stack.push(5);
 
-    cout << stack->pop() << endl;
-    cout << stack->peek() << endl;
+    cout << "The size of the stack is currently: " << stack.stackSize() << endl;
 
-    stack->print();
+    cout << "The element at the top of the stack is: " << stack.peek() << endl;
 
-    delete stack;
+    for(int i = 0; i < size; ++i) {
+        cout << stack.pop() << " ";
+    }
 
     return 0;
 }
