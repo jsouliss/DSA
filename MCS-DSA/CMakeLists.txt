@@ -9,3 +9,5 @@ add_executable(LListv2 LinkedListv2.cpp)
 
 add_executable(LListv3 LinkedListv3.cpp)
 add_executable(RLList RLinkedList.cpp)
+add_executable(RevPrintLList RevPrintLinkedList.cpp)
+add_executable(RevRecLL RevRecLinkedList.cpp)
