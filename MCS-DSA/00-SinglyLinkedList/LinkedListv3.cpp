@@ -43,7 +43,7 @@ void Print() {
 
 void Delete(int n) {
     struct Node* temp1 = head;
-    if (n == 1) {2
+    if (n == 1) {
         head = temp1->next;
         free(temp1);
         return;

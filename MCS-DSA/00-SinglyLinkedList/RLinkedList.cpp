@@ -65,6 +65,5 @@ int main() {
     head = Reverse(head);
     Print(head);
 
-
     return 0;
 }
