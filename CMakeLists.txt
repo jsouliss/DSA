@@ -12,8 +12,6 @@ endif()
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_BUILD_TYPE})
 
 add_executable(StackLinkedList MCS-DSA/02-Stack/StackLinkedList.cpp)
+add_executable(ReverseString MCS-DSA/02-Stack/ReverseString.cpp)
 add_executable(bubbleSort Algorithms/bubbleSort.cpp)
-
-# add_executable(heapSort Algorithms/heapSort.cpp)
-# add_executable(mergeSort Algorithms/mergeSort.cpp)
-# add_executable(quickSort Algorithms/quickSort.cpp)
+add_executable(ReverseStackLinkedList MCS-DSA/02-Stack/ReverseStackLinkedList.cpp)
