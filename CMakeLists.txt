@@ -18,3 +18,5 @@ add_executable(ReverseStackLinkedList MCS-DSA/02-Stack/ReverseStackLinkedList.cp
 add_executable(mergeTwoSortedLists NeetCode/03-LinkedLists/C++/mergeTwoSortedLists.cpp)
 add_executable(MergeLinkedLists NeetCode/03-LinkedLists/C++/MergeLinkedLists.cpp)
 add_executable(BalParen MCS-DSA/02-Stack/BalParen.cpp)
+add_executable(DoublyLinkedList NeetCode/03-LinkedLists/C++/DoublyLinkedList.cpp)
+add_executable(PrefixPostfix MCS-DSA/02-Stack/PrefixPostfix.cpp)
