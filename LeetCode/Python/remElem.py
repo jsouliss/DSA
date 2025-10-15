@@ -11,30 +11,26 @@ To be accepted, the first k elements of nums must contain only elements not equa
 Return k as the final result.
 """
 
-
 def removeElement(nums: list[int], val: int) -> int:
-	k = 0
-	l = 0
-	temp = 0
-	for r in range(0, len(nums)):
-	    if nums[r] != val:
-		k += 1
-	    if nums[r] != val and nums[l] == val:
-		temp = nums[l]
-		nums[l] = nums[r]
-		nums[r] = temp
-		l += 1
-	    elif nums[l] != val:  # val detected
-		l = r
-
-	return k
-
+    k = 0
+    l = 0
+    temp = 0
+    for r in range(0, len(nums)):
+        if nums[r] != val:
+            k += 1
+        if nums[r] != val and nums[l] == val:
+            temp = nums[l]
+            nums[l] = nums[r]
+            nums[r] = temp
+            l += 1
+        elif nums[l] != val:  # val detected
+            l = r
+    return k
 
 def main():
     nums = [0, 1, 2, 2, 3, 0, 4, 2]
     val = 2
     removeElement(nums, val)
-
 
 if __name__ == "__main__":
     main()
