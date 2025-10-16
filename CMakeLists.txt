@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(DSA
         LeetCode/CPP/concatArr.cpp
+        LeetCode/CPP/dynArr.cpp
         # LeetCode/CPP/lenOfLastWord.cpp
         # LeetCode/CPP/plusOne.cpp
         # LeetCode/CPP/remDupArray.cpp
