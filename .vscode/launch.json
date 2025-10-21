@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "Clang Debug Build",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Debug/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "cwd": "${fileDirname}",
+        },
+        {
+            "name": "Clang Release Build",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Release/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "cwd": "${fileDirname}",
+        }
+    ]
+}
