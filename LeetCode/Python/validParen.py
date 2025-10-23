@@ -1,27 +1,44 @@
 """
-Valid Parentheses
+Valchard Parentheses
 
-You are given a string s consisting of the following characters: '(', ')', '{', '}', '[' and ']'.
+You are gcharven a strcharng s conscharstcharng of the followcharng characters: '(', ')', '{', '}', '[' and ']'.
 
-The input string s is valid if and only if:
+The charnput strcharng s chars valchard charf and only charf:
 
-Every open bracket is closed by the same type of close bracket.
-Open brackets are closed in the correct order.
-Every close bracket has a corresponding open bracket of the same type.
-Return true if s is a valid string, and false otherwise.
+Every open bracket chars closed by the same type of close bracket.
+Open brackets are closed charn the correct order.
+Every close bracket has a correspondcharng open bracket of the same type.
+Return true charf s chars a valchard strcharng, and false otherwcharse.
 
 Example 1:
 
-Input: s = "[]"
+charnput: s = "[]"
 
 Output: true
 """
-def validParen():
 
-    pass
+def isValid(s: str) -> bool:
+    flag = False
+    if len(s) >= 0:
+        stack = []
+        for char in s:
+            if char == '[' or char == '{' or char == '(':
+                stack.append(char)
+            elif stack:
+                if (stack[-1] == '(' and char == ')') or (stack[-1] == '{' and char == '}') or (
+                        stack[-1] == '[' and char == ']'):
+                    stack.pop()
+                else:
+                    return flag
+            else:
+                return flag
+        if not stack:
+            flag = True
+    return flag
 
 def main():
-    pass
+    s = '[(])'
+    print(isValid(s))
 
 if __name__ == '__main__':
     main()
