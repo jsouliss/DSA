@@ -23,6 +23,5 @@ class MinStack:
 def main():
     stack = MinStack()
 
-
 if __name__ == "__main__":
     main()
