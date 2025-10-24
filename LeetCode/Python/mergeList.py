@@ -32,7 +32,10 @@ from LeetCode.Python.singlyList import ListNode
 #         self.val = val
 #         self.next = next
 
-def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+
+def mergeTwoLists(
+    self, list1: Optional[ListNode], list2: Optional[ListNode]
+) -> Optional[ListNode]:
     l1 = list1
     l2 = list2
     nl = ListNode()
@@ -46,8 +49,6 @@ def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) ->
             l2 = l2.next
         nl = nl.next
     tmp = l1 if l1 else l2
-    while tmp:
-        nl.next = tmp
-        nl = nl.next
-        tmp = tmp.next
+    nl.next = tmp
     return head.next
+
