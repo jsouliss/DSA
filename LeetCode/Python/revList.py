@@ -11,4 +11,4 @@ def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         curr.next = prev
         prev = curr
         curr = nxt
-    return 
+    return
