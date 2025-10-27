@@ -34,16 +34,19 @@ class LinkedList:
 
     # Remove first node after dummy head (assume it exists)
     def removeFront(self):
-        pass
+        # Empty list
+        if self.head.next is self.tail:
+            return None
+        # List is not empty
+        self.head.next = self.head.next.next
+        self.head.next.prev = self.head
+        return None
 
     # Remove last node before dummy tail (assume it exists)
     def removeEnd(self):
         pass
 
     def print(self):
-        pass
-def main():
-    pass
-
-if __name__ == '__main__':
-    main()
+        while self.head.next is not self.tail:
+            pass
+        return None
