@@ -44,9 +44,17 @@ class LinkedList:
 
     # Remove last node before dummy tail (assume it exists)
     def removeEnd(self):
-        pass
+        # NOTE: The is operator is checking reference equality
+        # Whether both variables point to the same object in memory, not value equality.
+        if self.tail.prev is self.head:
+            return None
+        self.tail.prev = self.tail.prev.prev
+        self.tail.prev.next = self.tail
+        return None
 
     def print(self):
-        while self.head.next is not self.tail:
-            pass
+        curr = self.head.next
+        while curr is not self.tail:
+            print(curr.val, end=' ')
+            curr = curr.next
         return None
