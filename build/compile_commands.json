@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/Users/jerrysolis/Projects/CLionProjects/DSA/build",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++ -g -std=gnu++14 -arch arm64 -o CMakeFiles/DSA.dir/LeetCode/CPP/concatArr.cpp.o -c /Users/jerrysolis/Projects/CLionProjects/DSA/LeetCode/CPP/concatArr.cpp",
+  "file": "/Users/jerrysolis/Projects/CLionProjects/DSA/LeetCode/CPP/concatArr.cpp",
+  "output": "/Users/jerrysolis/Projects/CLionProjects/DSA/build/CMakeFiles/DSA.dir/LeetCode/CPP/concatArr.cpp.o"
+},
+{
+  "directory": "/Users/jerrysolis/Projects/CLionProjects/DSA/build",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++ -g -std=gnu++14 -arch arm64 -o CMakeFiles/DSA.dir/LeetCode/CPP/dynArr.cpp.o -c /Users/jerrysolis/Projects/CLionProjects/DSA/LeetCode/CPP/dynArr.cpp",
+  "file": "/Users/jerrysolis/Projects/CLionProjects/DSA/LeetCode/CPP/dynArr.cpp",
+  "output": "/Users/jerrysolis/Projects/CLionProjects/DSA/build/CMakeFiles/DSA.dir/LeetCode/CPP/dynArr.cpp.o"
+}
+]
