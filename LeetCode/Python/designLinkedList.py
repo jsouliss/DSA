@@ -50,7 +50,9 @@ class MyLinkedList:
     def addAtIndex(self, index: int, val: int) -> None:
         if index > self.length or index < 0:
             return None
-        if index == self.length:
+        if index == 0:
+            self.addAtHead(val)
+        elif index == self.length:
             self.addAtTail(val)
         else:
             i = 0
@@ -58,7 +60,7 @@ class MyLinkedList:
             newNode = ListNode(val)
             while curr is not self.tail:
                 if i == index - 1:
-                    # Add node logic
+                    # Insert newNode AFTER curr (which is before the node at index)
                     newNode.next = curr.next
                     newNode.prev = curr
                     curr.next.prev = newNode
@@ -70,10 +72,15 @@ class MyLinkedList:
         return None
 
     def deleteAtIndex(self, index: int) -> None:
-        if index < 0:
+        if index < 0 or index >= self.length:
             return None
         i = 0
         curr = self.head.next
+        if index == 0:
+            curr.next.prev = self.head
+            curr.prev.next = curr.next
+            self.length -= 1
+            return None
         while curr is not self.tail:
             if i == index - 1:
                 curr.next = curr.next.next
