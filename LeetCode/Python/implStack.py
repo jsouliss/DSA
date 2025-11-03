@@ -34,7 +34,7 @@ All the calls to pop and top are valid.
 Follow-up: Can you implement the stack using only one queue?
 """
 from collections import deque
-
+"""
 class MyStack:
 
     def __init__(self):
@@ -54,6 +54,29 @@ class MyStack:
         if self.q:
             return True
         return False
+"""
+
+class MyStack:
+
+    def __init__(self):
+        self.q = deque()
+
+    def push(self, x: int) -> None:
+        self.q.append(x)
+
+        for _ in range(len(self.q) - 1):
+            curr = self.q.popleft() # pop front of queue
+            self.q.append(curr) # add front to end of queue
+        # now newly appended element is at the front of the queue
+
+    def pop(self) -> int:
+        return self.q.popleft()
+
+    def top(self) -> int:
+        return self.q[0]
+
+    def empty(self) -> bool:
+        return len(self.q) == 0
 
 # Your MyStack object will be instantiated and called as such:
 # obj = MyStack()
