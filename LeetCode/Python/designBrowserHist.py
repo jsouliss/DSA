@@ -45,6 +45,8 @@ homepage and url consist of  '.' or lower case English letters.
 At most 5000 calls will be made to visit, back, and forward.
 """
 
+# Doubly Linked List Implementation:
+"""
 class WebPageNode:
     def __init__(self, url=None):
         self.url = url
@@ -77,9 +79,33 @@ class BrowserHistory:
         while steps > 0 and self.curr.next:
             self.curr = self.curr.next
             steps -= 1
-        return self.curr.url
+        return self.curr.url 
+"""
 
-# Your BrowserHistory object will be instantiated and called as such:
+# Stack Implementation
+class BrowserHistory:
+    def __init__(self, homepage: str):
+        self.i = 0 # pointer
+        self.length = 1 # true length
+        self.history = [homepage]
+
+    def visit(self, url: str) -> None:
+        if len(self.history) < self.i + 2:
+            self.history.append(url)
+        else:
+            self.history[self.i + 1] = url
+        self.i += 1
+        self.length = self.i + 1 # overwrite length
+
+    def back(self, steps: int) -> str:
+        self.i = max(self.i - steps, 0) # adjusts our index backwards
+        return self.history[self.i]
+
+    def forward(self, steps: int) -> str:
+        self.i = min(steps + self.i, self.length - 1)
+        return self.history[self.i]
+
+    # Your BrowserHistory object will be instantiated and called as such:
 # obj = BrowserHistory(homepage)
 # obj.visit(url)
 # param_2 = obj.back(steps)
