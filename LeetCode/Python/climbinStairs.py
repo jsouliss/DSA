@@ -28,11 +28,40 @@ Constraints:
 1 <= n <= 30
 """
 
-def climbStairs(self, n: int) -> int:
-    pass
+"""
+# Recursive solution - Exceeds time limit
+def climbStairs(n: int) -> int:
+    if n == 1 or n == 0:
+        return 1
 
-def main():
-    pass
+    return climbStairs(n - 1) + climbStairs(n - 2)
+"""
 
-if __name__ == '__main__':
-    main()
+"""
+# Memoization solution
+def climbStairs(n: int) -> int:
+    memo = [-1] * (n + 1)
+    return climbStairsRec(n, memo)
+
+def climbStairsRec(n: int, memo):
+    if n == 1 or n == 0:  # base case 
+        return 1
+
+    # has the subtree operation occurred 
+    if memo[n] != -1:
+        return memo[n]
+
+    return climbStairsRec(n - 1, memo) + climbStairsRec(n - 2, memo)
+"""
+
+# Bottom-Up (Tabulation) Dynamic Programming solution
+def climbStairs(n: int) -> int:
+    dp = [-1] * (n + 1)
+    dp[0] = 1
+    dp[1] = 1
+
+    for i in range(2, len(dp)):
+        dp[i] = dp[i - 1] + dp[i - 2]
+
+    return dp[n]
+
